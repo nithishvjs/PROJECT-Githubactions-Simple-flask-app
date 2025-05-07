@@ -1,6 +1,18 @@
-# Flask Hello World🚀
+# Flask Hello World Application🚀
 
-A simple "Hello, World!" application built with Flask.
+This repository contains a simple Flask web application that serves a "Hello, World!" message. It is packaged using Docker and deployed through a Jenkins CI/CD pipeline triggered via Codeberg.
+
+---
+
+## 📌 Overview
+
+This project demonstrates:
+
+- A minimal Flask application
+- Docker containerization
+- Automated build and deployment using Jenkins pipeline
+
+---
 
 To Run this,
 
