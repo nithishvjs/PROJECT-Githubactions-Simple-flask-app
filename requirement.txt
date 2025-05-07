@@ -1,0 +1,2 @@
+# Requires Python >=3.8
+Flask==2.3.3
