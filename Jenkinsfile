@@ -5,7 +5,7 @@ pipeline {
         stage('Git push') {
             steps {
                 sh 'rm -rf *'
-                sh 'git clone https://codeberg.org/nithi17/flask-app.git'
+                sh 'git clone https://github.com/nithishvjs/Simple-flask-app.git'
             }
         }
         stage('Docker build') {
