@@ -27,4 +27,6 @@ jobs:
 
       - name: Deploy to kind
         run: sudo kubectl apply -f Deployment.yaml
+        run: sudo kubectl apply -f Service.yaml
+        
 
