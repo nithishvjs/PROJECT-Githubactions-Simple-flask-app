@@ -14,10 +14,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
-        run: sudo docker build -t myimage:latest -f Dockerfile .
+        run: sudo docker build -f Dockerfile .
 
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name : Push to DockerHub
-        run: sudo docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage:latest
+      - name: Tag Docker image
+        run: sudo docker tag myimage:latest ${{ secrets.DOCKER_USERNAME }}/myimage:latest
+
+      - name: Push Docker image
+        run: sudo docker push ${{ secrets.DOCKER_USERNAME }}/myimage:latest
+
