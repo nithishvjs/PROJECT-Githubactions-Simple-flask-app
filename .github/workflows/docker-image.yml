@@ -26,7 +26,10 @@ jobs:
         run: sudo docker push ${{ secrets.DOCKER_USERNAME }}/myimage:latest
 
       - name: Deploy to kind
-        run: sudo kubectl rollout restart deployment myapp
+        run: kubectl apply -f Deployment.yaml
+
+      - name: Restart deployment
+        run: sudo kubectl rollout restart deployment myapp || true
 
       - name: Expose to browser
         run: sudo kubectl apply -f Service.yaml
