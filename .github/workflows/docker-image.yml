@@ -20,4 +20,4 @@ jobs:
         run: echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name : Push to DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage:latest
+        run: sudo docker push ${{ secrets.DOCKERHUB_USERNAME }}/myimage:latest
