@@ -27,6 +27,8 @@ jobs:
 
       - name: Deploy to kind
         run: sudo kubectl apply -f Deployment.yaml
+
+      - name: Expose to browser
         run: sudo kubectl apply -f Service.yaml
         
 
