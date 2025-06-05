@@ -26,5 +26,5 @@ jobs:
         run: sudo docker push ${{ secrets.DOCKER_USERNAME }}/myimage:latest
 
       - name: Deploy to kind
-        run: kubectl apply -f Deployment.yaml
+        run: sudo kubectl apply -f Deployment.yaml
 
