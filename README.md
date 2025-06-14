@@ -10,7 +10,7 @@ This project demonstrates:
 
 - A minimal Flask application
 - Docker containerization
-- Automated build and deployment using Jenkins pipeline
+- Automated build and deployment using Github Actions pipeline
 
 ---
 
