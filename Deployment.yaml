@@ -19,3 +19,17 @@ spec:
           image: nithi17/myimage:latest
           ports:
             - containerPort: 5000
+          args:
+            - liveness
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
