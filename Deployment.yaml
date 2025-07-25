@@ -19,8 +19,6 @@ spec:
           image: nithi17/myimage:latest
           ports:
             - containerPort: 5000
-          args:
-            - liveness
           livenessProbe:
             httpGet:
               path: /
