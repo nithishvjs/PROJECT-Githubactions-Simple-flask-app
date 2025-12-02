@@ -26,7 +26,8 @@ jobs:
         run: sudo docker push ${{ secrets.DOCKER_USERNAME }}/myimage:latest
 
       - name: Deploy to kubernetes
-        run: sudo kubectl apply -f Deployment.yaml
+        run: sudo kubectl apply -f Deployment.yaml --validate=false
+
 
       - name: Restart deployment
         run: sudo kubectl rollout restart deployment myapp || true
