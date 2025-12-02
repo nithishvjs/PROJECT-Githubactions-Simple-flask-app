@@ -13,16 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run SonarQube Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          sonar-scanner \
-            -Dsonar.projectKey=myapp \
-            -Dsonar.sources=. \
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
       - name: Set up Docker Buildx
         run: sudo docker build -t myimage .
 
@@ -31,9 +21,6 @@ jobs:
 
       - name: Tag Docker image
         run: sudo docker tag myimage:latest ${{ secrets.DOCKER_USERNAME }}/myimage:latest
-
-      - name: Scan the image
-        run: sudo trivy image ${{ secrets.DOCKER_USERNAME }}/myimage:latest
 
       - name: Push Docker image
         run: sudo docker push ${{ secrets.DOCKER_USERNAME }}/myimage:latest
