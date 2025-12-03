@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: Github-actions
   labels:
-    app: myapp
+    app: Github-actions
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: Github-actions
   template:
     metadata:
       labels:
-        app: myapp
+        app: Github-actions
     spec:
       containers:
-        - name: myapp
+        - name: Github-actions
           image: nithi17/myimage:latest
           ports:
             - containerPort: 5000
